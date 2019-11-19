@@ -1,8 +1,5 @@
-import UIKit
 import Foundation
-import PlaygroundSupport
 
-PlaygroundPage.current.needsIndefiniteExecution = true
 // For this homework project, we'll be connecting to the "TLDR" server
 // to add a few books. The first thing you need to do is create an object
 // that we'll upload to the server.
@@ -54,7 +51,7 @@ Book(title: "Oedipus the King", author: "Sophocles", pubYear: "429 BC", url: "ht
 
 // Create a URL to connect to the server. Its address is:
 //      https://uofd-tldrserver-develop.vapor.cloud/books
-/*let urlString = "https://uofd-tldrserver-develop.vapor.cloud/books"
+let urlString = "https://uofd-tldrserver-develop.vapor.cloud/books"
 let url = URL(string: urlString)!
 // Create a URL request to publish the information, based upon the URL you
 // just created.
@@ -77,18 +74,17 @@ func post(){
 // Create a data task for publishing this element, and kick it off with a resume().
 
 let task = URLSession(configuration: .ephemeral).dataTask(with: request)
-*/
+
 
 for book in books{
-    print(book.title + " " + " ", book.author + " " + " " + book.pubYear + " " + " " + book.url)}
-    /*addBody(book: book)
+    addBody(book: book)
     addAValue()
     
     
     print(book.title + " " + " ", book.author + " " + " " + book.pubYear + " " + " " + book.url)
-}*/
-//post()
-//task.resume()
+}
+post()
+task.resume()
 // MARK: - HELPFUL HINTS
 // You might want to create a method for publishing the data, so that you
 // can effectively loop over an array of books.
