@@ -17,17 +17,24 @@ import Foundation
 // Using `Codable` more generally will be useful, as by doing this you'll
 // be able to reuse this struct in Project Three.
 
-struct Book: Codable{
+struct Book: Codable {
+
+    let id: Int?
+
     let title: String
+
     let author: String
-    let pubYear: String
-    let url: String
+
+    let published: String
+
+    let imageURLString: String
     
-    init(title: String, author: String, pubYear: String, url: String){
+    init(title: String, author: String, published: String, imageURLString: String){
+        self.id = nil
         self.title = title
         self.author = author
-        self.pubYear = pubYear
-        self.url = url
+        self.published = published
+        self.imageURLString = imageURLString
     }
 }
 
@@ -38,11 +45,11 @@ struct Book: Codable{
 // have an amusing dataset to work with, each student is requested to
 // create five different books for this database.
 
-let books: [Book] = [Book(title: "The Great Gatsby", author: "F. Scott Fitzgerald", pubYear: "1925", url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwillN3ttvXlAhVLS6wKHeYIBNkQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.theliterarygiftcompany.com%2Fcollections%2Fbook-cover-posters-1%2Fproducts%2Fthe-great-gatsby-poster&psig=AOvVaw0BVS4yJDI5NLWNViVtVM0W&ust=1574223797192684"),
-Book(title: "Nineteen Eighty-Four", author: "Gearge Orwell", pubYear: "1949", url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwj2s52zt_XlAhVCY6wKHbHnAAMQjRx6BAgBEAQ&url=https%3A%2F%2Fpixel8prints.net%2Fproducts%2F1984-alternative-book-cover-print-poster-art-orwells-powerful-book-with-quote-in-vintage-a-cool-russian-style-available-at-a3-a4-a5&psig=AOvVaw2XCLAhG8JVxaQT-k-E68GS&ust=1574223958754082"),
-Book(title: "Being John Lennon: A Restless Life", author: "Ray Connolly", pubYear: "2018", url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwix4-eeuPXlAhVH7qwKHRGdBCsQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.wamc.org%2Fpost%2Fbeing-john-lennon-restless-life-ray-connolly&psig=AOvVaw39fmHEZaEGUJ4Q3D05ohSi&ust=1574224187767070"),
-Book(title: "The Grapes of Wrath", author: "John Steinbeck", pubYear: "1939", url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwiJgoeUufXlAhVGba0KHbGvAHcQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.amazon.com%2FGrapes-Wrath-John-Steinbeck%2Fdp%2F0143039431&psig=AOvVaw1JWyDOnR0PPO5Xew4v5MtD&ust=1574224430645718"),
-Book(title: "Oedipus the King", author: "Sophocles", pubYear: "429 BC", url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwiD99fnufXlAhUFL6wKHS_-DL4QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.amazon.com%2FOedipus-Rex-Literary-Touchstone-Sophocles%2Fdp%2F1580495931&psig=AOvVaw3vJg2EipKGTlfQqlYz4vTd&ust=1574224591791594")]
+let books: [Book] = [Book(title: "The Great Gatsby", author: "F. Scott Fitzgerald", published: "1925", imageURLString: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwillN3ttvXlAhVLS6wKHeYIBNkQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.theliterarygiftcompany.com%2Fcollections%2Fbook-cover-posters-1%2Fproducts%2Fthe-great-gatsby-poster&psig=AOvVaw0BVS4yJDI5NLWNViVtVM0W&ust=1574223797192684"),
+Book(title: "Nineteen Eighty-Four", author: "Gearge Orwell", published: "1949", imageURLString: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwj2s52zt_XlAhVCY6wKHbHnAAMQjRx6BAgBEAQ&url=https%3A%2F%2Fpixel8prints.net%2Fproducts%2F1984-alternative-book-cover-print-poster-art-orwells-powerful-book-with-quote-in-vintage-a-cool-russian-style-available-at-a3-a4-a5&psig=AOvVaw2XCLAhG8JVxaQT-k-E68GS&ust=1574223958754082"),
+Book(title: "Being John Lennon: A Restless Life", author: "Ray Connolly", published: "2018", imageURLString: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwix4-eeuPXlAhVH7qwKHRGdBCsQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.wamc.org%2Fpost%2Fbeing-john-lennon-restless-life-ray-connolly&psig=AOvVaw39fmHEZaEGUJ4Q3D05ohSi&ust=1574224187767070"),
+Book(title: "The Grapes of Wrath", author: "John Steinbeck", published: "1939", imageURLString: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwiJgoeUufXlAhVGba0KHbGvAHcQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.amazon.com%2FGrapes-Wrath-John-Steinbeck%2Fdp%2F0143039431&psig=AOvVaw1JWyDOnR0PPO5Xew4v5MtD&ust=1574224430645718"),
+Book(title: "Oedipus the King", author: "Sophocles", published: "429 BC", imageURLString: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwiD99fnufXlAhUFL6wKHS_-DL4QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.amazon.com%2FOedipus-Rex-Literary-Touchstone-Sophocles%2Fdp%2F1580495931&psig=AOvVaw3vJg2EipKGTlfQqlYz4vTd&ust=1574224591791594")]
 
 
 // MARK: - STEP THREE
@@ -81,7 +88,7 @@ for book in books{
     addAValue()
     
     
-    print(book.title + " " + " ", book.author + " " + " " + book.pubYear + " " + " " + book.url)
+    print(book.title + " " + " ", book.author + " " + " " + book.published + " " + " " + book.imageURLString)
 }
 post()
 task.resume()
